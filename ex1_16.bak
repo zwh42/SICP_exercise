@@ -1,0 +1,13 @@
+(define (expt-by-square b n)
+  (define (square x) (* x x))
+  (define (expt-by-square-iter b n a) 
+    (cond ((= (/ n 2) 0) a)
+          ((= (/ n 2) 1) (* a b))
+          (else (expt-by-square-iter b (/ n 2) (* a (square b))))
+          )
+  )
+  
+  (expt-by-square-iter b n 1)
+)
+
+(expt-by-square 3 3)
