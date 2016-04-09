@@ -1,0 +1,22 @@
+(define (accmulate combiner null-value term a next b)
+  (if (a > b)
+      null-value
+      (combiner (term a) (next a) (next b))
+  )
+  
+)
+
+(define (mul a b)
+   (* a b)
+)
+
+(define (inc a) (+ a 1))
+
+(define (cube x ) (* x x x))
+
+define(
+       (sum-cubes a b) 
+       (accmulate mul 0 cube a inc b)
+)
+
+(sum-cubes 1 10)
